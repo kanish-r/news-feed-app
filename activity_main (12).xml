@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/activity_main.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context=".MainActivity">
+
+    <!-- ══ Header ══ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#B71C1C"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="0dp">
+
+        <!-- Top row: Title + Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📰 NewsFlash"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today"
+                android:textSize="12sp"
+                android:textColor="#FFCDD2" />
+        </LinearLayout>
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Search news..."
+            android:textColorHint="#90A4AE"
+            android:textColor="#212121"
+            android:textSize="13sp"
+            android:background="#FFFFFF"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Category Tabs -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="0dp">
+
+                <TextView android:id="@+id/tabAll"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:text="All" android:textSize="13sp" android:gravity="center"
+                    android:paddingStart="18dp" android:paddingEnd="18dp"
+                    android:textColor="#FFFFFF" android:textStyle="bold"
+                    android:background="#D32F2F" android:layout_marginEnd="4dp"
+                    android:clickable="true" android:focusable="true"/>
+
+                <TextView android:id="@+id/tabTech"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:text="💻 Tech" android:textSize="13sp" android:gravity="center"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:textColor="#FFCDD2" android:layout_marginEnd="4dp"
+                    android:clickable="true" android:focusable="true"/>
+
+                <TextView android:id="@+id/tabSports"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:text="🏏 Sports" android:textSize="13sp" android:gravity="center"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:textColor="#FFCDD2" android:layout_marginEnd="4dp"
+                    android:clickable="true" android:focusable="true"/>
+
+                <TextView android:id="@+id/tabScience"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:text="🔬 Science" android:textSize="13sp" android:gravity="center"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:textColor="#FFCDD2" android:layout_marginEnd="4dp"
+                    android:clickable="true" android:focusable="true"/>
+
+                <TextView android:id="@+id/tabBusiness"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:text="💼 Business" android:textSize="13sp" android:gravity="center"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:textColor="#FFCDD2"
+                    android:clickable="true" android:focusable="true"/>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <!-- ══ Article Count ══ -->
+    <TextView
+        android:id="@+id/tvArticleCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latest News"
+        android:textSize="12sp"
+        android:textColor="#607D8B"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="4dp" />
+
+    <!-- ══ RecyclerView ══ -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>
